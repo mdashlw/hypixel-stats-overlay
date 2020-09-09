@@ -42,7 +42,16 @@ function formatDisplays(player) {
 function update() {
     getPlayerByName(PLAYER_NAME)
         .then(player => {
+            if (!player) {
+                drawItem(['§4Player not found:', '§c' + PLAYER_NAME]);
+                return;
+            }
+
             drawItem(formatDisplays(player));
+        })
+        .catch(error => {
+            console.error(error);
+            drawItem(['§4Error:', '§c' + error.message]);
         });
 }
 

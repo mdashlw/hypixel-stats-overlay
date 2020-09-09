@@ -117,10 +117,6 @@ class Player {
         return this.highestRank.color + this.displayname;
     }
 
-    get skywars_formatted_level() {
-        return this.stats.SkyWars.levelFormatted;
-    }
-
     get skywars_remaining_exp_next_level() {
         const lvl = getSwLevel(this.stats.SkyWars.skywars_experience);
         const perc = lvl % 1;

@@ -21,7 +21,7 @@ const DISPLAY = [
     },
     {
         display: '§7Level: §a{}',
-        stat: 'skywars_formatted_level'
+        stat: 'stats.SkyWars.levelFormatted'
     },
     {
         display: '§7Exp for next level: §b{}',
