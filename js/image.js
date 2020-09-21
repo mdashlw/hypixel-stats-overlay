@@ -1,3 +1,6 @@
+// All the code here is taken and refactored from
+// https://github.com/PitPanda/PitPandaProduction/blob/master/utils/ImageHelpers.js
+
 const THE_CANVAS = document.getElementById('the-canvas');
 const colors = {
     '0': { color: '000000', textshadow: '000000' },
@@ -18,7 +21,7 @@ const colors = {
     'f': { color: 'FFFFFF', textshadow: 'BFBFBF' }
 };
 
-function drawItem(lines, { outline = true, background = null } = {}) {
+function drawItem(lines, { outline = IMAGE_SETTINGS.outline, background = null } = {}) {
     const size = IMAGE_SETTINGS.size;
     const padding = 8;
     const height = lines.length * size + padding * 2;

@@ -33,5 +33,6 @@ const GOALS = {
 };
 const IMAGE_SETTINGS = {
     'font': 'Minecraft',
-    'size': 40
+    'size': 40,
+    'outline': true
 }
