@@ -1,3 +1,4 @@
+// Use /api new on hypixel to obtain your key
 const HYPIXEL_API_KEYS = [
     'insert-key-here'
 ];
@@ -32,7 +33,9 @@ const GOALS = {
     'stats.SkyWars.wins_solo': 8500
 };
 const IMAGE_SETTINGS = {
+    // Minecraft font is built-in
     'font': 'Minecraft',
     'size': 40,
+    // See readme to see what is outline
     'outline': true
 }
