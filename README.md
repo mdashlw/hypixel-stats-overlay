@@ -14,10 +14,10 @@ really simple thing for obs that displays your hypixel stats
 
 ### Default Config
 
-![](https://media.discordapp.net/attachments/668319827764576257/757651900916170852/unknown.png)
+![](https://cdn.discordapp.com/attachments/766308819839483934/767626597540298762/unknown.png)
 
 ### No Outline
 
 Go to `config.js` and set `outline` to `false` in `display` section.
 
-![](https://cdn.discordapp.com/attachments/668319827764576257/758208520339456030/unknown.png)
+![](https://cdn.discordapp.com/attachments/766308819839483934/767626726997098496/unknown.png)
