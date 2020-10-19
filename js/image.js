@@ -21,8 +21,8 @@ const colors = {
     'f': { color: 'FFFFFF', textshadow: 'BFBFBF' }
 };
 
-function drawItem(lines, { outline = IMAGE_SETTINGS.outline, background = null } = {}) {
-    const size = IMAGE_SETTINGS.size;
+function drawItem(lines, { outline = config.display.outline, background = null } = {}) {
+    const size = config.display.font_size;
     const padding = 8;
     const height = lines.length * size + padding * 2;
     const width = padding * 2 + Math.max(...lines.map(measureText));
@@ -75,7 +75,7 @@ function drawItem(lines, { outline = IMAGE_SETTINGS.outline, background = null }
     });
 }
 
-function measureText(text, { size = IMAGE_SETTINGS.size, font = IMAGE_SETTINGS.font } = {}) {
+function measureText(text, { size = config.display.font_size, font = config.display.font } = {}) {
     const ctx = THE_CANVAS.getContext('2d');
 
     ctx.patternQuality = 'best';
@@ -101,7 +101,7 @@ function measureText(text, { size = IMAGE_SETTINGS.size, font = IMAGE_SETTINGS.f
     return length;
 }
 
-function drawText(text, { x = 0, y = 0, size = IMAGE_SETTINGS.size, font = IMAGE_SETTINGS.font } = {}) {
+function drawText(text, { x = 0, y = 0, size = config.display.font_size, font = config.display.font } = {}) {
     if (!text.startsWith('§')) {
         text = `§7${text}`;
     }

@@ -116,35 +116,10 @@ class Player {
     get coloredName() {
         return this.highestRank.color + this.displayname;
     }
-
-    get skywars_remaining_exp_next_level() {
-        const lvl = getSwLevel(this.stats.SkyWars.skywars_experience);
-        const perc = lvl % 1;
-        return 10000 * (1 - perc);
-    }
-}
-
-function getSwLevel(xp) {
-    var xps = [0, 20, 70, 150, 250, 500, 1000, 2000, 3500, 6000, 10000, 15000];
-    if (xp >= 15000) {
-        return (xp - 15000) / 10000 + 12;
-    } else {
-        for (i = 0; i < xps.length; i++) {
-            if (xp < xps[i]) {
-                return 1 + i + (xp - xps[i - 1]) / (xps[i] - xps[i - 1]);
-            }
-        }
-    }
-}
-
-var keyCounter = 0;
-
-function provideKey() {
-    return HYPIXEL_API_KEYS[keyCounter++ % HYPIXEL_API_KEYS.length];
 }
 
 function getPlayerByName(name) {
-    return fetch(`https://api.hypixel.net/player?key=${provideKey()}&name=${name}`)
+    return fetch(`https://api.hypixel.net/player?key=${config.api_key}&name=${name}`)
         .then(response => response.json())
         .then(data => {
             if (data && data.player) {
