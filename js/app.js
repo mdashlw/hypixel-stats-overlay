@@ -78,7 +78,7 @@ function formatValue(value) {
             if (Number.isInteger(value)) {
                 return value.toLocaleString('en');
             } else {
-                return value.toFixed(2);
+                return parseFloat(value.toFixed(2)).toLocaleString('en');
             }
         }
     } else if (typeof value === 'boolean') {
