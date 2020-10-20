@@ -2,7 +2,7 @@ const formattersFunctions = {
     'field': (player, value) => getField(player, value),
     'session': (player, value) => getField(player, value) - getField(firstPlayer, value),
     'goal': (player, value) => `${(getField(player, value) / config.goals[value] * 100).toFixed(2)}%`,
-    'eval': (player, value) => eval(applyFormatters(player, value)),
+    'eval': (player, value) => eval(applyFormatters(player, value, { format: false })),
 };
 const customFields = {
     'stats.SkyWars.exp_until_next_level': player => {
@@ -75,7 +75,11 @@ function formatValue(value) {
         if (isNaN(value)) {
             return '§cN/A';
         } else {
-            return value.toLocaleString('en');
+            if (Number.isInteger(value)) {
+                return value.toLocaleString('en');
+            } else {
+                return value.toFixed(2);
+            }
         }
     } else if (typeof value === 'boolean') {
         return value ? '§aYes' : '§cNo';
@@ -131,13 +135,13 @@ function extractFormatters(string) {
     return formatters;
 }
 
-function applyFormatters(player, string) {
+function applyFormatters(player, string, { format = true } = {}) {
     const formatters = extractFormatters(string);
 
     for (const formatter of formatters.reverse()) {
         const func = formattersFunctions[formatter.key];
         const result = func(player, formatter.value);
-        const formattedResult = formatValue(result);
+        const formattedResult = format ? formatValue(result) : result;
 
         string = string.substring(0, formatter.indexStart) + formattedResult + string.substring(formatter.indexEnd + 1);
     }
