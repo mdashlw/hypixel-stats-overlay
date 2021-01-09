@@ -1,7 +1,7 @@
 const config = {
   // Use /api new on the server to obtain your personal key
   "api_key": "your key here",
-  "player": "mdashlw",
+  "player": "oWolfz",
   "stats": [
     "{field:formattedName}",
     "§7Solo Kills: §e{field:stats.SkyWars.kills_solo}",
