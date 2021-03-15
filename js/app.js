@@ -154,7 +154,7 @@ function formatDisplays(player) {
 }
 
 function update() {
-    getPlayerByName(config.player)
+    getPlayerByUUID(config.player)
         .then(player => {
             if (!player) {
                 drawItem(['§4Player not found:', '§c' + config.player]);
@@ -173,5 +173,6 @@ function update() {
         });
 }
 
+drawItem(['§7Loading...']);
 update();
 setInterval(update, 5000);

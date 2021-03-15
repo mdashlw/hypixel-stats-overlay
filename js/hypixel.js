@@ -118,8 +118,8 @@ class Player {
     }
 }
 
-function getPlayerByName(name) {
-    return fetch(`https://api.hypixel.net/player?key=${config.api_key}&name=${name}`)
+function getPlayerByUUID(uuid) {
+    return fetch(`https://api.hypixel.net/player?key=${config.api_key}&uuid=${uuid}`)
         .then(response => response.json())
         .then(data => {
             if (data && data.player) {

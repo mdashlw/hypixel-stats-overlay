@@ -1,11 +1,12 @@
 const config = {
   // Use /api new on the server to obtain your personal key
-  "api_key": "your key here",
-  "player": "mdashlw",
+  "api_key": "",
+  "player": "00ed569465034efb850594d4814dd81d",
   "stats": [
-    "{field:formattedName}",
-    "§7Solo Kills: §e{field:stats.SkyWars.kills_solo}",
-    "§7Solo Wins: §e{field:stats.SkyWars.wins_solo}",
+    "§7[{field:stats.SkyWars.levelFormatted}§7] {field:formattedName}",
+    "    §7Solo    |    Teams",
+    "§7Kills: §e{field:stats.SkyWars.kills_solo} §7| Kills: §e{field:stats.SkyWars.kills_team}",
+    "§7Wins: §e{field:stats.SkyWars.wins_solo} §7| Wins: §e{field:stats.SkyWars.wins_team}",
     "§7Shards: §b{field:stats.SkyWars.shard} §7| §b{session:stats.SkyWars.shard} today",
     "§7Session Kills: §e{session:stats.SkyWars.kills_solo}",
     "§7Session K/D: §a{eval:{session:stats.SkyWars.kills_solo}/{session:stats.SkyWars.deaths_solo}}",
