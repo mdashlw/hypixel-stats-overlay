@@ -21,3 +21,7 @@ really simple thing for obs that displays your hypixel stats
 Go to `config.js` and set `outline` to `false` in `display` section.
 
 ![](https://cdn.discordapp.com/attachments/766308819839483934/767626726997098496/unknown.png)
+
+## Help
+
+If you need help setting up this overlay, contact me on Discord: `mdash#5230`.
