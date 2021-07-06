@@ -24,4 +24,4 @@ Go to `config.js` and set `outline` to `false` in `display` section.
 
 ## Help
 
-If you need help setting up this overlay, contact me on Discord: `mdash#5230`.
+If you need help setting up this overlay, contact me on Discord: `mdash#1234`.
